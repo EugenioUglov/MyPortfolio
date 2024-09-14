@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="assets/js/libraries/includeHTML-master/includeHTML.js"></script>
 	</head>
 	<body class="is-preload">
 
@@ -17,32 +18,7 @@
 					</header>
 
 				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li><a href="index.html">Main</a></li>
-							<li><a href="webProjects.html">Web projects</a></li>
-							<li><a href="programs.html">Programs</a></li>
-							<li class="active"><a href="gamedev.html">Gamedev</a></li>
-							<li><a href="articles.html">Articles</a></li>
-						</ul>
-						<ul class="icons">
-							<!-- LinkedIn -->
-							<li><a href="https://www.linkedin.com/in/eugenio-uglov-022873214" class="icon brands alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
-							<!---->
-
-							<!-- Telegram -->
-							<li><a href="https://t.me/eugeniouglov" class="icon brands alt fa-telegram"><span class="label">Telegram</span></a></li>
-							<!---->
-
-							<!-- Facebook -->
-							<li><a href="https://www.facebook.com/eugeniouglov" class="icon brands alt fa-facebook-f"><span class="label" target="_blank">Facebook</span></a></li>
-							<!---->
-							
-							<!-- GitHub -->
-							<li><a href="https://github.com/EugenioUglov/" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-							<!---->
-						</ul>
-					</nav>
+				<div id="navContainer"></div>
 
 				<!-- Main -->
 					<div id="main">
@@ -213,6 +189,10 @@
 				var year = today.getFullYear();
 				
 				$('.year').text(year);
+
+				includeHTML('assets/htmlModules/navigation.html', document.getElementById('navContainer'), function(){
+					$('.gamedevNav').addClass('active');
+				});
 			</script>
 
 	</body>
