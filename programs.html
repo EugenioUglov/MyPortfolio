@@ -41,55 +41,7 @@
 					</div>
 
 				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<form method="post" action="mailto:eugeniouglov@gmail.com">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3" style="min-height: 150px; resize: vertical"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-						</section>
-						<section class="split contact">
-							<section>
-								<h3>Email</h3>
-								<p><a href="mailto:eugeniouglov@gmail.com">eugeniouglov@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<!-- LinkedIn -->
-									<li><a href="https://www.linkedin.com/in/eugenio-uglov-022873214" class="icon brands alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
-									<!---->
-
-									<!-- Telegram -->
-									<li><a href="https://t.me/eugeniouglov" class="icon brands alt fa-telegram"><span class="label">Telegram</span></a></li>
-									<!---->
-
-									<!-- Facebook -->
-									<li><a href="https://www.facebook.com/eugeniouglov" class="icon brands alt fa-facebook-f"><span class="label" target="_blank">Facebook</span></a></li>
-									<!---->
-									
-									<!-- GitHub -->
-									<li><a href="https://github.com/EugenioUglov/" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-									<!---->
-								</ul>
-							</section>
-						</section>
-					</footer>
+					<footer id="footer" class="contact-me"></footer>
 
 				<!-- Copyright -->
 					<div id="copyright">
@@ -118,6 +70,9 @@
 				includeHTML('assets/htmlModules/navigation.html', document.getElementById('navContainer'), function(){
 					$('.programsNav').addClass('active');
 				});
+
+				
+				includeHTML('assets/htmlModules/contact.html', document.getElementsByClassName('contact-me')[0]);
 			</script>
 
 	</body>
