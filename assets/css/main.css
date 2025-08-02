@@ -2622,19 +2622,22 @@ input, select, textarea {
 			display: block;
 			margin: 2.5rem 0;
 			width: 100%;
+			height: 300px;
+			overflow: hidden;
 		}
 
-			.image.fit:first-child {
-				margin-top: 0;
-			}
+		.image.fit:first-child {
+			margin-top: 0;
+		}
 
-			.image.fit img {
-				width: 100%;
-				/* object-fit: cover;
-				object-position: top; */
-				object-fit: contain;
-				object-position: center;
-			}
+		.image.fit img {
+			width: 100%;
+			height: 100%;
+			/* object-fit: cover;
+			object-position: top; */
+			object-fit: cover;
+			object-position: center;
+		}
 
 		.image.main {
 			display: block;
@@ -2642,13 +2645,13 @@ input, select, textarea {
 			width: 100%;
 		}
 
-			.image.main:first-child {
-				margin-top: 0;
-			}
+		.image.main:first-child {
+			margin-top: 0;
+		}
 
-			.image.main img {
-				width: 100%;
-			}
+		.image.main img {
+			width: 100%;
+		}
 
 		@media screen and (max-width: 736px) {
 
@@ -4717,9 +4720,18 @@ input, select, textarea {
 	}
 
 	.video-container {
+		position: relative;
+		width: 100%;
+		padding-top: 56.25%; /* Соотношение 16:9 (9 / 16 = 0.5625) */
+		height: 0;
+		overflow: hidden;
 	}
 
 	.video-container iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
 		width: 100%;
-		height: 600px;
+		height: 100%;
+		border: 0;
 	}
