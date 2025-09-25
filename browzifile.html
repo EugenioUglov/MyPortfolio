@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Eugenio Uglov Porfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="assets/js/libraries/includeHTML-master/includeHTML.js"></script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Main</a>
+					</header>
+
+				<!-- Nav -->
+				<div data-src="assets/htmlModules/navigation.html"></div>
+
+				<!-- Main -->
+					<div id="main">
+						<!-- Posts -->
+						<div>
+							<h2 class="title">Browzifile</h2>
+							<div style="text-align: center;">
+								<img src="images/programs/browzifile.jpg" alt="" style="max-width: 600px; width: 100%;" />
+							</div><br />
+							<div class="video-container">
+								<iframe src="https://www.youtube.com/embed/a3xeFoUZTA4?si=kKz0p4DTuMyVFt9g" 
+								title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+							</div>
+							</p> 
+							<p>despite my best attempts to keep my digital life organized, I always hit the same wall: 
+
+								“Where did I put that file?”
+
+								Even with labeled folders and clean naming systems, search was always a pain.
+
+								I didn’t want to remember where a file was but I just wanted to describe it and find it, like I do on the web.
+
+								So I built Browzifile.
+
+								What is Browzifile?
+
+								Browzifile is a lightweight desktop tool for Windows that lets you search your files by describing them, not just by remembering exact names or folders.</p>
+					
+							<ul class="actions special">
+								<!-- <li><a href="" class="button" target="_blank">Support on KICKSTARTER</a></li> -->
+								 <!-- <li><a href="" class="button" target="_blank">Download Demo</a></li> -->
+							</ul>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer" class="contact-me"></footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul>&copy; <li class="year"></li><li>Eugenio Uglov</li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<script>
+				var today = new Date();
+				
+				var year = today.getFullYear();
+				
+				$('.year').text(year);
+
+				
+				includeHTML('assets/htmlModules/contact.html', document.getElementsByClassName('contact-me')[0]);
+			</script>
+
+	</body>
+</html>
