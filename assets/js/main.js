@@ -124,7 +124,7 @@
 		$wrapper._parallax(0.925);
 
 	// Nav Panel.
-
+	/*
 		// Toggle.
 			$navPanelToggle = $(
 				'<a href="#navPanel" id="navPanelToggle">Menu</a>'
@@ -161,6 +161,7 @@
 					target: $body,
 					visibleClass: 'is-navPanel-visible'
 				});
+		
 
 			// Get inner.
 				$navPanelInner = $navPanel.children('nav');
@@ -195,63 +196,64 @@
 				&&	browser.osVersion < 10)
 					$navPanel
 						.css('transition', 'none');
-
+	*/
 	// Intro.
 		var $intro = $('#intro');
 
 		if ($intro.length > 0) {
+			if (document.body.classList.contains('main') == false) {
+				// Hack: Fix flex min-height on IE.
+					if (browser.name == 'ie') {
+						$window.on('resize.ie-intro-fix', function() {
 
-			// Hack: Fix flex min-height on IE.
-				if (browser.name == 'ie') {
-					$window.on('resize.ie-intro-fix', function() {
+							var h = $intro.height();
 
-						var h = $intro.height();
+							if (h > $window.height())
+								$intro.css('height', 'auto');
+							else
+								$intro.css('height', h);
 
-						if (h > $window.height())
-							$intro.css('height', 'auto');
-						else
-							$intro.css('height', h);
+						}).trigger('resize.ie-intro-fix');
+					}
 
-					}).trigger('resize.ie-intro-fix');
-				}
+				// Hide intro on scroll (> small).
+					breakpoints.on('>small', function() {
 
-			// Hide intro on scroll (> small).
-				breakpoints.on('>small', function() {
+						$main.unscrollex();
 
-					$main.unscrollex();
+						$main.scrollex({
+							mode: 'bottom',
+							top: '25vh',
+							bottom: '-50vh',
+							enter: function() {
+								$intro.addClass('hidden');
+							},
+							leave: function() {
+								$intro.removeClass('hidden');
+							}
+						});
 
-					$main.scrollex({
-						mode: 'bottom',
-						top: '25vh',
-						bottom: '-50vh',
-						enter: function() {
-							$intro.addClass('hidden');
-						},
-						leave: function() {
-							$intro.removeClass('hidden');
-						}
 					});
 
-				});
+				// Hide intro on scroll (<= small).
+					breakpoints.on('<=small', function() {
 
-			// Hide intro on scroll (<= small).
-				breakpoints.on('<=small', function() {
+						$main.unscrollex();
 
-					$main.unscrollex();
+						$main.scrollex({
+							mode: 'middle',
+							top: '15vh',
+							bottom: '-15vh',
+							enter: function() {
+								$intro.addClass('hidden');
+							},
+							leave: function() {
+								$intro.removeClass('hidden');
+							}
+						});
 
-					$main.scrollex({
-						mode: 'middle',
-						top: '15vh',
-						bottom: '-15vh',
-						enter: function() {
-							$intro.addClass('hidden');
-						},
-						leave: function() {
-							$intro.removeClass('hidden');
-						}
 					});
-
-			});
+			}
 
 		}
 
