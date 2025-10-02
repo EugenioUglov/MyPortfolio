@@ -4737,3 +4737,15 @@ input, select, textarea {
 		height: 100%;
 		border: 0;
 	}
+
+	.under-content {
+		color: #717981;
+		background-color: #686b6b;
+		color: #909498;
+		cursor: default;
+		position: relative;
+		margin: 0 auto;
+		padding: 30px;
+		max-width: 72rem;
+		z-index: 2;
+	}
