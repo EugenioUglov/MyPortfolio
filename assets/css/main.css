@@ -4820,3 +4820,11 @@ input, select, textarea {
 			text-align: center;
 		}
 	}
+
+	.video-container {
+		margin-bottom: 20px;
+	}
+
+	.video-description {
+		text-align: left;
+	}
