@@ -202,7 +202,7 @@ input, select, textarea {
 	}
 
 	h2 {
-		font-size: 1.75rem;
+		font-size: 1rem;
 		line-height: 1.3;
 		margin: 0 0 1.5rem 0;
 	}
@@ -4774,4 +4774,49 @@ input, select, textarea {
 
 	a {
 		cursor: pointer;
+	}
+
+	.contact-title {
+		font-family: sans-serif;
+		text-align: center;
+		font-size: 1.5rem;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		margin-bottom: 20px;
+	}
+
+	/* Сбрасываем старую логику шаблона для этого конкретного списка */
+	ul.actions.special {
+		display: flex !important;
+		flex-direction: row !important;
+		flex-wrap: wrap !important;
+		justify-content: center !important; /* Центрируем кнопки */
+		margin: 0 auto 2rem auto !important; /* Обнуляем отрицательные маржины шаблона */
+		padding: 0 !important;
+		list-style: none !important;
+		gap: 1rem; /* Современный способ задать отступ МЕЖДУ элементами */
+	}
+
+	ul.actions.special li {
+		padding: 0 !important; /* Убираем тот самый padding слева */
+		margin: 0 !important;  /* Убираем все маржины */
+		display: block !important;
+	}
+
+	/* На мобильных устройствах (опционально: растягиваем кнопки во всю ширину) */
+	@media screen and (max-width: 480px) {
+		ul.actions.special {
+			flex-direction: column !important;
+			align-items: center;
+		}
+		
+		ul.actions.special li {
+			width: 100%;
+			max-width: 300px; /* Чтобы кнопки не были бесконечно длинными */
+		}
+		
+		ul.actions.special li .button {
+			width: 100%;
+			text-align: center;
+		}
 	}
